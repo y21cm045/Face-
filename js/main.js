@@ -1,24 +1,33 @@
-// GSAP Animations
-gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
-gsap.from(".hero-content h1", { duration: 1, y: -50, opacity: 0, delay: 0.5 });
-gsap.from(".hero-content p", { duration: 1, y: 50, opacity: 0, delay: 1 });
-gsap.from(".btn", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
-
-// Scroll Animations
-gsap.utils.toArray("section").forEach((section) => {
-    ScrollTrigger.create({
-        trigger: section,
-        start: "top 80%",
-        onEnter: () => {
-            gsap.from(section, { opacity: 0, y: 50, duration: 1 });
-        },
-    });
+// Initialize AOS
+AOS.init({
+    duration: 1000,
+    once: false,
+    easing: 'ease-in-out',
 });
 
-// Toggle Mobile Menu
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+// Close Menu on Click Outside (Mobile)
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
