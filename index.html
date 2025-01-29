@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaceAttendance Pro</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,50 +27,54 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="animate__animated animate__fadeInDown">Welcome to FaceAttendance Pro</h1>
-            <p class="animate__animated animate__fadeInUp">The future of attendance tracking is here.</p>
-            <a href="#features" class="btn animate__animated animate__fadeIn">Explore Features</a>
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
+            <h1>Welcome to FaceAttendance Pro</h1>
+            <p>Automate attendance tracking with AI-powered face recognition.</p>
+            <a href="#features" class="btn">Get Started</a>
         </div>
-        <div class="hero-image">
-            <img src="https://via.placeholder.com/500" alt="Face Recognition Illustration">
+        <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+            <img src="https://via.placeholder.com/500" alt="Face Recognition">
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
-        <h2>Features</h2>
+        <h2 data-aos="fade-up">Why Choose Us?</h2>
         <div class="feature-cards">
-            <div class="card animate__animated animate__fadeInLeft">
+            <div class="card" data-aos="fade-right" data-aos-delay="200">
                 <h3>Real-Time Recognition</h3>
-                <p>Accurate and fast face recognition for seamless attendance tracking.</p>
+                <p>Instant face detection and attendance logging.</p>
             </div>
-            <div class="card animate__animated animate__fadeInUp">
-                <h3>Easy Integration</h3>
-                <p>Integrate with your existing systems effortlessly.</p>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Secure & Accurate</h3>
+                <p>Military-grade encryption for data protection.</p>
             </div>
-            <div class="card animate__animated animate__fadeInRight">
-                <h3>Secure & Reliable</h3>
-                <p>Your data is safe with our advanced security measures.</p>
+            <div class="card" data-aos="fade-left" data-aos-delay="400">
+                <h3>Cloud Integration</h3>
+                <p>Sync data with Google Drive or Dropbox.</p>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We are a team of innovators dedicated to making attendance tracking smarter and more efficient. Our face recognition technology ensures accuracy and reliability.</p>
+        <div class="about-content" data-aos="fade-up">
+            <h2>About Us</h2>
+            <p>We combine cutting-edge AI with user-friendly design to revolutionize attendance systems.</p>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        <div class="contact-content" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -78,9 +82,8 @@
         <p>&copy; 2023 FaceAttendance Pro. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
