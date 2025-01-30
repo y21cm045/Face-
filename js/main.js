@@ -1,8 +1,27 @@
-// Initialize AOS
+// Initialize AOS with custom settings
 AOS.init({
-    duration: 1000,
+    duration: 800,
     once: false,
-    easing: 'ease-in-out',
+    mirror: true,
+    easing: 'ease-out-cubic'
+});
+
+// Parallax effect on hero image
+window.addEventListener('scroll', () => {
+    const heroImage = document.querySelector('.hero-image img');
+    const scrolled = window.pageYOffset;
+    heroImage.style.transform = `translateY(${scrolled * 0.15}px)`;
+});
+
+// Hover effect for cards
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
 });
 
 // Hamburger Menu Toggle
